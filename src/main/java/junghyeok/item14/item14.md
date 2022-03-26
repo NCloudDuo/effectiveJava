@@ -2,7 +2,7 @@
 
 Comparable 인터페이스의 compareTo에 관한 아이템  
 compareTo는 단순 동치성 비교에 더해 순서까지 비교 가능하며, 제네릭하다.  
-Comparable을 구현했다는 것은 그 클래스의 인스턴슫르에는 자연적인 순서(natural order)가 있음을 뜻한다.  
+Comparable을 구현했다는 것은 그 클래스의 인스턴스들에는 자연적인 순서(natural order)가 있음을 뜻한다.  
 
 자연적인 순서가 존재하므로, 정렬, 검색, min, max계산, 자동정렬되는 컬렉션 관리도 편하게 할 수 있다.  
 
