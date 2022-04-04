@@ -1,0 +1,33 @@
+# equals는 일반 규약을 지켜 재정의하라
+
+- 요약
+    - **객체 식별성**(두 객체가 물리적으로 같은가)이 아니라 **논리적 동치성**을 확인해야 하는데, 상위 클래스의 equals가 논리적 동치성을 비교하도록 재정의되지 않았을 때 재정의한다.
+      - ex) Integer, String 등의 값 클래스
+    - equals는 함정이 곳곳에 도사리고 있어서 자칫하면 끔찍한 결과를 초래한다. _웬만하면 재정의하지 말자._ 
+    - 아래중 하나에 해당한다면 재정의하지 않는 것이 좋다.
+      - 각 인스턴스가 본질적으로 고유하다.
+      - 인스턴스의 논리적 동치성을 검사할 일이 없다.
+      - 상위 클래스에서 재정의한 equals가 하위 클래스에도 딱 들어맞는다.
+      - 클래스가 private이거나 package-private이고 equals 메서드를 호출할 일이 없다.
+    - equals()의 일반 규약
+      - 반사성 : x.equals(x) = true
+      - 대칭성 : x.equals(y) = true 이면 y.equals(x) = true이다.
+      - 추이성 : x.equals(y) = true 이고 y.equals(z) = true이면 x.equals(z) = true 이다.
+      - 일관성 : equals 메소드는 반복해서 호출해도 항상 true이거나 false를 반환한다.
+      - null : x.equals(null) = false
+    - 구체 클래스를 확장해 새로운 값을 추가하면서 equals를 만족시킬 방법은 없지만 우회 방법으로 상속대신 컴포지션을 이용하는 방법이 있다.
+    - ```equals 구현 방법```
+      - == 연산자를 통해 입력이 자기 자신인지 확인한다.
+        - float, double의 경우 => Float.compare(float, float), Double.compare(double, double) 사용
+        - float, double을 제외한 기본 타입 필드는 == 이용
+        - 참조 타입 필드는 각각의 equals 메서드 이용
+        - 배열의 모든 원소가 핵심필드라면 Arrays.equals 메서드들 중 하나를 사용
+      - instanceof 연산자로 올바른 타입인지 확인한다.
+      - 입력을 올바른 타입으로 형변환한다.
+      - 입력 객체와 자기 자신의 대응되는 핵심필드들이 모두 일치하는지 하나씩 검사한다.
+    - equals를 재정의시 hashCode도 재정의하자
+    - Object를 매개변수로 받는 equals여야 overriding이다. 이외에는 overloading
+- 질문
+    - Collection 계층도
+    - OpenJDK 종류별 특징
+    - instanceof는 조상포함 vs getClass() 같은 클래스일때만? + 각각 사용하는 예
