@@ -8,8 +8,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class CloneableTest {
 
-    @AllArgsConstructor
     @Getter
+    @AllArgsConstructor
     static class CloneableImpl implements Cloneable{
         private int a;
         private Object b;
@@ -18,10 +18,10 @@ public class CloneableTest {
         public CloneableImpl clone() throws CloneNotSupportedException {
             return (CloneableImpl) super.clone();
         }
+
     }
 
     @AllArgsConstructor
-    @Getter
     static class CloneableNotImpl{
         private int a;
         private Object b;
@@ -30,6 +30,7 @@ public class CloneableTest {
         public CloneableNotImpl clone() throws CloneNotSupportedException {
             return (CloneableNotImpl) super.clone();
         }
+
     }
 
     @Test

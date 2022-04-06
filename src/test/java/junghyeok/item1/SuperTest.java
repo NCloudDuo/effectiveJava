@@ -1,9 +1,10 @@
 package junghyeok.item1;
 
+import junghyeok.chapter2.item1.SubA;
+import junghyeok.chapter2.item1.SubB;
+import junghyeok.chapter2.item1.Super;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class SuperTest {
 

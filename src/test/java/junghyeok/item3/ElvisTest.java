@@ -1,11 +1,8 @@
 package junghyeok.item3;
 
+import junghyeok.chapter2.item3.Elvis;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.lang.reflect.AccessibleObject;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class ElvisTest {
 
