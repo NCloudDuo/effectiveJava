@@ -1,7 +1,6 @@
-package junghyeok.chapter5;
+package junghyeok.chapter5.item26;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class GenericTest {
 
